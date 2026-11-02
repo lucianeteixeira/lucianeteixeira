@@ -1,0 +1,310 @@
+<title>Perfil de Investidor Semedo &amp; Corrêa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: uma coluna de formulário (~44rem) com cabeçalho de marca; secções numeradas porque o formulário é uma sequência real */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --ink:#18233a; --muted:#5b6475; --line:#dde1e8;
+  --navy:#1f3864; --brass:#a9824a; --chip:#eef1f6; --chip-on:#1f3864; --chip-on-ink:#ffffff;
+  --ok:#2f7a4f; --err:#b3322a; --focus:#a9824a;
+  --f-display:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1522; --surface:#161e2f; --ink:#e7eaf1; --muted:#9aa3b5; --line:#2a3550;
+  --navy:#9db5e6; --brass:#d2ad74; --chip:#1e2840; --chip-on:#9db5e6; --chip-on-ink:#0f1522;
+  --ok:#6fc193; --err:#ef8a80; --focus:#d2ad74; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1522; --surface:#161e2f; --ink:#e7eaf1; --muted:#9aa3b5; --line:#2a3550;
+  --navy:#9db5e6; --brass:#d2ad74; --chip:#1e2840; --chip-on:#9db5e6; --chip-on-ink:#0f1522;
+  --ok:#6fc193; --err:#ef8a80; --focus:#d2ad74; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 64px}
+.wrap{max-width:44rem;margin:0 auto;display:grid;gap:20px}
+header{display:grid;gap:6px;padding-bottom:18px;border-bottom:2px solid var(--brass)}
+.brand{font-family:var(--f-display);font-weight:700;font-size:clamp(1.6rem,4vw,2.1rem);letter-spacing:.08em;color:var(--navy);margin:0}
+.sub{font-family:var(--f-display);font-size:1.15rem;margin:0;color:var(--ink)}
+.lead{color:var(--muted);margin:6px 0 0;max-width:62ch}
+section.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 20px 22px;display:grid;gap:14px}
+h2{font-family:var(--f-display);font-weight:400;font-size:1.2rem;margin:0;color:var(--navy);display:flex;gap:10px;align-items:baseline;text-wrap:balance}
+h2 .n{font-family:var(--f-body);font-size:.75rem;font-weight:700;color:var(--brass);letter-spacing:.08em;min-width:1.6em}
+.hint{color:var(--muted);font-size:.86rem;margin:-6px 0 0}
+h3{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:6px 0 0;font-weight:700;display:flex;justify-content:space-between;gap:8px}
+h3 button{font:inherit;text-transform:none;letter-spacing:0;font-weight:600;font-size:.8rem;color:var(--navy);background:none;border:0;cursor:pointer;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-block;padding:7px 13px;border-radius:999px;background:var(--chip);border:1px solid var(--line);font-size:.9rem;user-select:none;transition:background .12s,color .12s}
+.chip input:checked+span{background:var(--chip-on);color:var(--chip-on-ink);border-color:var(--chip-on)}
+.chip input:focus-visible+span{outline:2px solid var(--focus);outline-offset:2px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:12px}
+label.f{display:grid;gap:5px;font-size:.86rem;font-weight:600;min-width:0}
+input[type=text],input[type=email],input[type=tel],input[type=number],textarea{font:inherit;font-weight:400;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:9px 11px;width:100%}
+input:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+textarea{min-height:90px;resize:vertical}
+.unit{display:flex;align-items:center;gap:8px}.unit input{max-width:10rem}.unit span{color:var(--muted)}
+.rank{display:grid;gap:8px}.rank label{display:grid;grid-template-columns:2.2em 1fr;align-items:center;gap:6px;font-weight:700;color:var(--brass)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:var(--muted)}
+.consent input{margin-top:3px;width:18px;height:18px;flex:none}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{font:inherit;font-weight:700;border-radius:8px;padding:11px 22px;cursor:pointer;border:1px solid var(--navy);background:var(--navy);color:var(--chip-on-ink)}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn[disabled]{opacity:.55;cursor:default}
+.msg{font-size:.9rem;font-weight:600}.msg.ok{color:var(--ok)}.msg.err{color:var(--err)}
+.notice{border:1px dashed var(--line);border-radius:10px;padding:14px 16px;color:var(--muted);font-size:.9rem}
+#admin h2{justify-content:space-between;flex-wrap:wrap}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+details summary{cursor:pointer;color:var(--navy);font-weight:600}
+dl{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:4px 14px;margin:8px 0 0}dt{color:var(--muted)}dd{margin:0}
+footer{color:var(--muted);font-size:.78rem;text-align:center}
+@media (prefers-reduced-motion:reduce){.chip span{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="brand">SEMEDO &amp; CORRÊA</p>
+    <p class="sub">Formulário de Perfil de Investidor</p>
+    <p class="lead">A Semedo &amp; Corrêa atua na Área Metropolitana de Lisboa e procura conhecer as zonas de interesse dos seus investidores, para lhes apresentar oportunidades imobiliárias ajustadas aos seus perfis e objetivos. Toque nas opções que se aplicam. Pode escolher várias.</p>
+  </header>
+
+  <section id="admin" class="card" hidden>
+    <h2><span>Respostas recebidas <span id="count" class="hint"></span></span><button type="button" class="btn ghost" id="csv">Exportar CSV</button></h2>
+    <div id="adminBody" class="tbl"><p class="hint">A carregar respostas…</p></div>
+  </section>
+
+  <div id="status" class="notice" hidden></div>
+
+  <form id="form" class="wrap" novalidate>
+    <section class="card">
+      <h2><span class="n">01</span>Dados do investidor</h2>
+      <div class="grid2">
+        <label class="f">Nome *<input type="text" id="nome" autocomplete="name" required></label>
+        <label class="f">Telefone<input type="tel" id="telefone" autocomplete="tel"></label>
+        <label class="f">E-mail *<input type="email" id="email" autocomplete="email" required></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">02</span>Zonas de interesse</h2>
+      <div id="zonas"></div>
+      <label class="f">Outras zonas<input type="text" id="zonasOutros" placeholder="Ex.: Leiria, Coimbra"></label>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">03</span>Zonas prioritárias</h2>
+      <p class="hint">Das localidades selecionadas, indique as 3 zonas prioritárias de investimento.</p>
+      <div class="rank">
+        <label>1.º<input type="text" id="p1"></label>
+        <label>2.º<input type="text" id="p2"></label>
+        <label>3.º<input type="text" id="p3"></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">04</span>Tipo de imóvel</h2>
+      <div id="imovel"></div>
+      <label class="f">Outros<input type="text" id="imovelOutros"></label>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">05</span>Tipologia</h2>
+      <div id="tipologia"></div>
+      <label class="f">Outras<input type="text" id="tipologiaOutras"></label>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">06</span>Tipo de oportunidade imobiliária</h2>
+      <p class="hint">Opções apresentadas por ordem de relevância.</p>
+      <div id="oportunidade"></div>
+      <label class="f">Outros<input type="text" id="oportunidadeOutros"></label>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">07</span>Nível de obras aceite</h2>
+      <div id="obras"></div>
+      <label class="f">Outros<input type="text" id="obrasOutros"></label>
+      <label class="f">Valor de remodelação aceite por m²
+        <span class="unit"><input type="number" id="valorM2" min="0" step="10" inputmode="numeric"><span>€/m²</span></span></label>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">08</span>Capital disponível para investir</h2>
+      <div id="capital"></div>
+      <h3>Forma de financiamento</h3>
+      <div id="financiamento"></div>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">09</span>Tempo de investimento</h2>
+      <div id="prazo"></div>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">10</span>Rentabilidade anual (ROI) esperada</h2>
+      <div id="roi"></div>
+      <label class="f">Outra<input type="text" id="roiOutra"></label>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">11</span>Observações</h2>
+      <textarea id="observacoes" aria-label="Observações"></textarea>
+      <label class="consent"><input type="checkbox" id="rgpd"><span>Autorizo a Semedo &amp; Corrêa a tratar os dados pessoais aqui fornecidos para efeitos de contacto e apresentação de oportunidades de investimento imobiliário, nos termos do Regulamento Geral sobre a Proteção de Dados (RGPD). *</span></label>
+      <div class="actions">
+        <button type="submit" class="btn" id="submit">Enviar perfil</button>
+        <span id="msg" class="msg" role="status"></span>
+      </div>
+    </section>
+  </form>
+
+  <footer>Semedo &amp; Corrêa · Perfil de Investidor · Os campos com * são obrigatórios.</footer>
+</div>
+
+<script>
+const OPT = {
+  zonas: [
+    ["Grande Lisboa – Margem Norte",["Lisboa","Sintra","Amadora","Odivelas","Oeiras","Cascais","Loures","Vila Franca de Xira","Mafra"]],
+    ["Distrito de Setúbal – Margem Sul e restantes",["Almada","Seixal","Barreiro","Moita","Montijo","Alcochete","Sesimbra","Palmela","Setúbal","Alcácer do Sal","Grândola","Santiago do Cacém","Sines"]],
+    ["Zona Oeste",["Torres Vedras","Alenquer","Arruda dos Vinhos","Sobral de Monte Agraço","Lourinhã","Cadaval","Bombarral","Óbidos","Caldas da Rainha","Peniche","Nazaré","Alcobaça"]],
+    ["Ribatejo",["Azambuja","Cartaxo","Santarém","Almeirim","Alpiarça","Benavente","Salvaterra de Magos","Coruche","Rio Maior","Vila Nova da Barquinha","Entroncamento","Torres Novas","Tomar"]],
+    ["Outras regiões",["Algarve","Alentejo","Aveiro","Porto"]]
+  ],
+  imovel: [
+    ["Apartamentos",["Cave com luz natural e logradouro","Rés do chão","1.º andar sem elevador","2.º andar sem elevador","3.º andar sem elevador","4.º andar sem elevador","5.º andar ou acima sem elevador","Com elevador"]],
+    ["Outros tipos de imóvel",["Moradias","Terrenos","Imóveis comerciais","Prédios","Ruínas"]]
+  ],
+  tipologia: [[null,["T0","T1","T2","T3","T4","T5 ou superior"]]],
+  oportunidade: [[null,["Imóveis para remodelar e revender","Imóveis para revenda sem remodelar","Imóveis novos","Imóveis para arrendamento / Alojamento Local","Imóveis em planta","Imóveis em vendas judiciais"]]],
+  obras: [[null,["Sem obras (pronto a habitar)","Obras ligeiras (pintura, pavimentos)","Obras médias (cozinha, casas de banho)","Remodelação total","Reconstrução / reabilitação profunda"]]],
+  capital: [[null,["Até 100.000 €","100.000 € – 250.000 €","250.000 € – 500.000 €","500.000 € – 1.000.000 €","Acima de 1.000.000 €"]],"radio"],
+  financiamento: [[null,["Capital próprio","Crédito bancário","Misto"]]],
+  prazo: [[null,["Curto prazo (até 12 meses)","Médio prazo (1 a 3 anos)","Longo prazo (mais de 3 anos)"]]],
+  roi: [[null,["Até 5%","5% – 10%","10% – 15%","15% – 20%","Acima de 20%"]],"radio"]
+};
+const RADIO = new Set(["capital","roi"]);
+const TEXT = ["nome","telefone","email","zonasOutros","imovelOutros","tipologiaOutras","oportunidadeOutros","obrasOutros","valorM2","roiOutra","observacoes"];
+
+function el(t,a={},...k){const e=document.createElement(t);for(const[x,v]of Object.entries(a))x==="text"?e.textContent=v:e.setAttribute(x,v);k.forEach(c=>e.append(c));return e;}
+let uid=0;
+for (const key of Object.keys(OPT)) {
+  const host=document.getElementById(key); const type=RADIO.has(key)?"radio":"checkbox";
+  for (const g of OPT[key]) {
+    if (typeof g==="string") continue;
+    const [title,items]=g;
+    if (title){
+      const h=el("h3",{},el("span",{text:title}));
+      if (items.length>4 && type==="checkbox"){
+        const b=el("button",{type:"button",text:"Selecionar todos"});
+        b.onclick=()=>{const boxes=[...b.closest("h3").nextElementSibling.querySelectorAll("input")];const all=boxes.every(i=>i.checked);boxes.forEach(i=>i.checked=!all);b.textContent=all?"Selecionar todos":"Limpar";};
+        h.append(b);
+      }
+      host.append(h);
+    }
+    const wrap=el("div",{class:"chips"});
+    for (const it of items){
+      const id="o"+(uid++);
+      wrap.append(el("label",{class:"chip"},el("input",{type,name:key,value:it,id}),el("span",{text:it})));
+    }
+    host.append(wrap);
+  }
+}
+const form=document.getElementById("form"), msg=document.getElementById("msg"), btn=document.getElementById("submit");
+const $=id=>document.getElementById(id);
+
+function collect(){
+  const d={};
+  TEXT.forEach(k=>d[k]=$(k).value.trim());
+  d.prioridades=[$("p1").value.trim(),$("p2").value.trim(),$("p3").value.trim()];
+  for (const k of Object.keys(OPT)){
+    const v=[...form.querySelectorAll(`input[name="${k}"]:checked`)].map(i=>i.value);
+    d[k]=RADIO.has(k)?(v[0]||""):v;
+  }
+  d.rgpd=$("rgpd").checked;
+  return d;
+}
+function fill(d){
+  TEXT.forEach(k=>{if(d[k]!=null)$(k).value=d[k];});
+  (d.prioridades||[]).forEach((v,i)=>{if($("p"+(i+1)))$("p"+(i+1)).value=v||"";});
+  for (const k of Object.keys(OPT)){
+    const vals=[].concat(d[k]||[]);
+    form.querySelectorAll(`input[name="${k}"]`).forEach(i=>i.checked=vals.includes(i.value));
+  }
+  $("rgpd").checked=!!d.rgpd;
+}
+function say(t,kind){msg.textContent=t;msg.className="msg "+(kind||"");}
+
+let db=null, me=null, readOnly=false;
+const status=$("status");
+function notice(t){status.textContent=t;status.hidden=false;}
+
+form.addEventListener("submit",async e=>{
+  e.preventDefault();
+  const d=collect();
+  if(!d.nome){say("Indique o seu nome.","err");$("nome").focus();return;}
+  if(!/^\S+@\S+\.\S+$/.test(d.email)){say("Indique um e-mail válido.","err");$("email").focus();return;}
+  if(!d.rgpd){say("Para enviar, autorize o tratamento dos dados (RGPD).","err");return;}
+  if(!db||!me){say("Não é possível enviar nesta vista. Abra o formulário com sessão iniciada.","err");return;}
+  if(readOnly){say("O seu acesso permite apenas consultar este formulário.","err");return;}
+  btn.disabled=true; say("A enviar…");
+  try{
+    d.submetidoEm=new Date().toISOString();
+    await db.doc("respostas/"+me).set(d);
+    say("Perfil enviado. Obrigado! Pode voltar a esta página para atualizar as suas respostas.","ok");
+    btn.textContent="Atualizar perfil";
+  }catch(err){
+    if(err&&err.code==="invalid_argument"){readOnly=true;say("O seu acesso não permite enviar respostas. Peça à Semedo & Corrêa acesso de Colaborador.","err");}
+    else say("O envio falhou. Tente novamente dentro de instantes.","err");
+  }finally{btn.disabled=false;}
+});
+
+/* ---- Painel de respostas (apenas Editores e proprietária) ---- */
+let rows=[];
+const COLS=[["nome","Nome"],["email","E-mail"],["telefone","Telefone"],["zonas","Zonas"],["zonasOutros","Outras zonas"],["prioridades","Prioridades"],["imovel","Tipo de imóvel"],["imovelOutros","Outro imóvel"],["tipologia","Tipologia"],["tipologiaOutras","Outra tipologia"],["oportunidade","Oportunidade"],["oportunidadeOutros","Outra oportunidade"],["obras","Obras"],["obrasOutros","Outras obras"],["valorM2","€/m²"],["capital","Capital"],["financiamento","Financiamento"],["prazo","Prazo"],["roi","ROI"],["roiOutra","Outro ROI"],["observacoes","Observações"],["submetidoEm","Enviado em"]];
+const fmt=v=>Array.isArray(v)?v.filter(Boolean).join("; "):(v??"");
+const fmtDate=s=>{try{return new Date(s).toLocaleString("pt-PT",{dateStyle:"short",timeStyle:"short"});}catch(e){return s||"";}};
+function renderAdmin(){
+  $("count").textContent=`· ${rows.length}`;
+  const body=$("adminBody"); body.textContent="";
+  if(!rows.length){body.append(el("p",{class:"hint",text:"Ainda não há respostas. Quando um investidor enviar o formulário, aparece aqui."}));return;}
+  const t=el("table"),hd=el("tr");["Investidor","Capital","Prazo","Enviado em"].forEach(h=>hd.append(el("th",{text:h})));t.append(el("thead",{},hd));
+  const tb=el("tbody");
+  rows.forEach(r=>{
+    const dl=el("dl");COLS.slice(1).forEach(([k,l])=>{const v=k==="submetidoEm"?fmtDate(r[k]):fmt(r[k]);if(v){dl.append(el("dt",{text:l}),el("dd",{text:v}));}});
+    const det=el("details",{},el("summary",{text:r.nome||"(sem nome)"}),dl);
+    const tr=el("tr");tr.append(el("td",{},det),el("td",{text:r.capital||"—"}),el("td",{text:fmt(r.prazo)||"—"}),el("td",{text:fmtDate(r.submetidoEm)}));tb.append(tr);
+  });
+  t.append(tb);body.append(t);
+}
+$("csv").onclick=async()=>{
+  const esc=v=>`"${String(v).replace(/"/g,'""')}"`;
+  const csv="﻿"+[COLS.map(c=>esc(c[1])).join(";"),...rows.map(r=>COLS.map(([k])=>esc(fmt(r[k]))).join(";"))].join("\r\n");
+  const dl=await claude.use("downloads");
+  if(!dl){$("csv").textContent="Exportação indisponível";$("csv").disabled=true;return;}
+  try{await dl.save({filename:"respostas-perfil-investidor.csv",data:new Blob([csv],{type:"text/csv"})});}catch(e){}
+};
+
+(async()=>{
+  if(!window.claude||!claude.use){notice("Pré-visualização: o envio fica disponível quando abrir o formulário publicado com sessão iniciada.");return;}
+  const [dbNs,user]=await Promise.all([claude.use("db"),claude.use("user")]);
+  db=dbNs;
+  if(!db||!user){notice("Para enviar o seu perfil, inicie sessão e abra o link que recebeu da Semedo & Corrêa.");return;}
+  try{me=await user.id();}catch(e){me=null;}
+  const canWrite=await user.can("data.write").catch(()=>null);
+  if(canWrite===false){readOnly=true;notice("Pode consultar o formulário, mas o seu acesso não permite enviar. Peça à Semedo & Corrêa acesso de Colaborador.");}
+  if(me){
+    const timer=setTimeout(()=>{},10000);
+    try{const s=await db.doc("respostas/"+me).get();if(s.exists){fill(s.data());btn.textContent="Atualizar perfil";say("Já enviou o seu perfil. Pode alterá-lo e voltar a enviar.","ok");}}catch(e){}
+    clearTimeout(timer);
+  }
+  if(await user.canEdit().catch(()=>false)){
+    $("admin").hidden=false;
+    const t=setTimeout(()=>{if(!rows.length)$("adminBody").textContent="As respostas estão a demorar a carregar. Atualize a página.";},10000);
+    db.collection("respostas").orderBy("submetidoEm","desc").onSnapshot(snap=>{clearTimeout(t);rows=snap.docs.map(d=>d.data());renderAdmin();},
+      ()=>{clearTimeout(t);$("adminBody").textContent="Não foi possível carregar as respostas.";});
+  }
+})();
+</script>
